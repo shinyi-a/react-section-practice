@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning React</title>
+  <!-- dev -->
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <!-- prod -->
+  <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script> -->
+  <!-- <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script> -->
+  <!-- babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <h1>React in HTML test</h1>
+
+  <div id="banner"></div>
+
+  <footer>
+    <p>footer</p>
+  </footer>
+
+  <script type="text/babel">
+      const Banner = () => {
+          const title = "i did not know you can use react in html"
+          const subtitle = "this is a subtitle"
+          function handleClick() {
+              window.alert("you clicked test");
+          }
+          return (<div>
+            <h2>{title.toUpperCase()}</h2>
+            <h3>{subtitle}</h3>
+            <h3>this is today's date: {new Date().toDateString()}</h3>
+            <button onClick={handleClick}>test</button>
+            </div>)
+      }
+
+      //render component to DOM
+      ReactDOM.render(<Banner/>, document.getElementById("banner"))
+  </script>
+</body>
+</html>
